@@ -1,3 +1,3 @@
-"Embedded-Systems Projects" 
+# Embedded Systems Projects 
 
-Various coursework and personal work centering on embedded systems design. 
+Various coursework and personal projects centering on embedded systems design. 
