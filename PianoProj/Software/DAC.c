@@ -59,5 +59,3 @@ void PortF_Init(void){
 void DAC_Out(unsigned long data){
 	GPIO_PORTA_DATA_R = (GPIO_PORTA_DATA_R&~0xFC)+(data<<2);// Assign PA2-PA7 with the 6-bit value data
 }
-
-
