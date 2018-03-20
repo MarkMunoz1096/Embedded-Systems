@@ -57,25 +57,25 @@ int main(void){
 		
 		// Sine waveform Generation
 		else if(mode%4==1){
-			Sound_Tone(RELOAD_262Hz);                    // Output Sine Wave at 262Hz
-			DACOUT = sinewave[clk_cnt];                  // DAC=1.65sin(pi*x/64)+1.65
+			Sound_Tone(RELOAD_262Hz);                   // Output Sine Wave at 262Hz
+			DACOUT = sinewave[clk_cnt];                 // DAC=1.65sin(pi*x/64)+1.65
 		}
 		
 		// Square Waveform Generation
 		else if(mode%4==2){
-			Sound_Tone(RELOAD_262Hz);                    // Output Square Wave at 262Hz
-			if(clk_cnt<=63){                             // 0-63 clock ticks high(50% duty cycle)
-				DACOUT = 0x3F;                             // set waveform high
+			Sound_Tone(RELOAD_262Hz);                   // Output Square Wave at 262Hz
+			if(clk_cnt<=63){                            // 0-63 clock ticks high(50% duty cycle)
+				DACOUT = 0x3F;                            // set waveform high
 			}
-			else if(clk_cnt>63&&clk_cnt<=127){           // 64-127 clock ticks low(50% duty cycle)
-				DACOUT = 0x00;                             // set waveform low
+			else if(clk_cnt>63&&clk_cnt<=127){          // 64-127 clock ticks low(50% duty cycle)
+				DACOUT = 0x00;                            // set waveform low
 			}
 		}			
 		
 		// Get Input from Keypad and Determine Output Frequency
 		else if(mode%4==3){
-			Read_Key();                                  // Change Output Frequency based on key pressed
-			DACOUT = sinewave[clk_cnt];                  // Output is a Sine Waveform
+			Read_Key();                                 // Change Output Frequency based on key pressed
+			DACOUT = sinewave[clk_cnt];                 // Output is a Sine Waveform
 		}
 	}         
 }
