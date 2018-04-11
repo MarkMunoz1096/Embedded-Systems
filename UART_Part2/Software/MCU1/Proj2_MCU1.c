@@ -21,7 +21,7 @@ void DisableInterrupts(void);
 // 4. Main loop
 int main(void){
 	unsigned long brightness;// controls LED brightness
-  unsigned char r, message;// communication variables between MCUs
+  unsigned char r, message;  // communication variables between MCUs
 	DisableInterrupts();     // disable interrupts while initializing
 	PLL_Init();              // PLL w/ 80Mhz bus clk
 	SysTick_Init();          // No interrupt systick
